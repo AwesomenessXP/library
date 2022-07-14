@@ -20,6 +20,7 @@ header {
     justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid;
+    z-index: 1;
 }
 
 header #login {

@@ -8,4 +8,42 @@ HELPFUL TIPS:
 - add button to change read status
 */
 
+// --------------------------- DEFINE OUR VARIABLES -------------------------
+let myLibrary = [];
+let addBookBtn = document.getElementById("add-book-btn");
+let popupWindow = document.getElementById('popup-window');
+let popup = document.getElementById('popup');
+
+
+// ----------------------------- OBJECTS/FUNCTIONS -------------------------
+
+function Book(title, author, pageNum, isRead) { // the constructor
+    this.title = title;
+    this.author = author;
+    this.pageNum = pageNum;
+    this.isRead = isRead;
+}
+
+// function addBookToLibrary {
+
+// }
+
+function renderPopUp () {
+    popupWindow.style.display = 'block';
+    popup.style.backgroundColor = 'rgba(0, 0, 0, 0.233)';
+    popup.style.zIndex = '100';
+}
+
+// ------------------------------ EVENT LISTENERS -------------------
+
+window.addEventListener('load', () => {
+    // popupWindow.style.display = 'none';
+});
+
+addBookBtn.addEventListener('click', () => {
+    //before we add the book, we need to input data
+    renderPopUp();
+    let newBook = new Book();
+});
+
 
