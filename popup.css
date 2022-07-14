@@ -1,6 +1,6 @@
 #popup {
+    display: none;
     position: absolute;
-    display: flex;
     align-items: center;    
     justify-content: center;
     width: 100%;
@@ -9,7 +9,7 @@
 }
 
 #popup-window {
-    display: grid;
+    display: none;
     grid-template: 10fr 1fr / 1fr;
     height: 400px;
     width: 350px;
@@ -38,4 +38,21 @@ input {
     width: 100%;
     border: 1px solid;
     border-radius: 5px;
+}
+
+.multiple-choice {
+    width: 15px;
+}
+
+#choices, #choices * {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 5px 0 5px;
+}
+
+.multiple-choice:after {
+    content: "";
+    position: absolute;
+    display: none;
 }

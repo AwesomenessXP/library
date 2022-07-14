@@ -1,6 +1,7 @@
 :root {
     --font-type: sans-serif;
     --default-radius: 12px;
+    --btn-border-rad: 3px;
 }
 
 * {
