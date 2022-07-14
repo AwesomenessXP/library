@@ -10,24 +10,30 @@ HELPFUL TIPS:
 
 // --------------------------- DEFINE OUR VARIABLES -------------------------
 let myLibrary = [];
-let addBookBtn = document.getElementById("add-book-btn");
-let popupWindow = document.getElementById('popup-window');
-let popup = document.getElementById('popup');
-let cancelBtn = document.getElementById('cancel-button');
-
+let inputTitle;
+let inputAuthor;
+let inputPages;
+let inputRead;
+let newBook;
+const addBookBtn = document.getElementById("add-book-btn");
+const popupWindow = document.getElementById('popup-window');
+const popup = document.getElementById('popup');
+const cancelBtn = document.getElementById('cancel-button');
+const library = document.getElementById('library');
+const submitBtn = document.getElementById('submit-btn');
 
 // ----------------------------- OBJECTS/FUNCTIONS -------------------------
 
-function Book(title, author, pageNum, isRead) { // the constructor
+function Book(title, author, pageNum = 0, isRead) { // the constructor
     this.title = title;
     this.author = author;
     this.pageNum = pageNum;
     this.isRead = isRead;
 }
 
-// function addBookToLibrary {
-
-// }
+function addBookToLibrary (){
+    
+}
 
 function renderPopUp () {
     popupWindow.style.display = 'grid';
@@ -51,11 +57,32 @@ window.addEventListener('load', () => {
 addBookBtn.addEventListener('click', () => {
     //before we add the book, we need to input data
     renderPopUp();
-    let newBook = new Book();
+    addBookToLibrary();
 });
 
 cancelBtn.addEventListener('click', () => {
     closePopUp();
 });
 
+submitBtn.addEventListener('click', () => {
+    inputTitle = document.getElementById('title').value;
+    inputAuthor = document.getElementById('author').value;
+    inputPages = document.getElementById('pages').value;
+    document.getElementById('yes').checked ? inputRead = true : inputRead = false;
 
+
+    if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== 0)
+            && (inputRead !== '')) {
+        console.log(`${inputTitle}, ${inputAuthor}, ${inputPages}, ${inputRead}`);
+
+        document.getElementById('title').value = '';
+        document.getElementById('author').value = '';
+        document.getElementById('pages').value = '';
+    }// if
+
+    // Reset the variables
+    inputTitle = '';
+    inputAuthor = '';
+    inputPages = 0;
+    inputRead = '';
+});

@@ -14,36 +14,35 @@
         <div id="page-container">
             <div id="popup">
                 <div id="popup-window">
-                    <form action="#" method="get">
-                        <div>
-                            <label for="title">Title</label>
-                            <input class="input" type='text' id="title" name="title" placeholder = "The Hobbit" required>
-                        </div>
-                        <div>
-                            <label for="author">Author</label>
-                            <input class="input" type='text' id="title" name="title" placeholder = "J.R.R Tolkien" required>
-                        </div>
-                        <div>
-                            <label for="pages">Pages read</label>
-                            <input class="input" type="number" id="title" name="title" placeholder = "293" required>
-                        </div>
-                        <div>
-                            <p>Have read this book</p>
-                            
-                            <div id="choices">
-                                <div>
-                                    <label for="yes">Yes</label>
-                                    <input type="radio" id="yes" name="multiple-choice" value="yes" required>
-                                </div>
+                    <!-- <form></form> -->
+                    <div>
+                        <label for="title">Title</label>
+                        <input class='input' type='text' id="title" name="title" placeholder = "The Hobbit" required>
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <input class='input' type='text' id="author" name="author" placeholder = "J.R.R Tolkien" required>
+                    </div>
+                    <div>
+                        <label for="pages">Pages read</label>
+                        <input class='input' type="number" id="pages" name="pages" placeholder = "293" required>
+                    </div>
+                    <div>
+                        <p>Have read this book</p>
+                        
+                        <div id="choices">
+                            <div>
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="yes" name="multiple-choice" value="yes" required>
+                            </div>
 
-                                <div>
-                                    <label for="no">No</label>
-                                    <input type="radio"  name="multiple-choice" value="no" required>
-                                </div>
+                            <div>
+                                <label for="no">No</label>
+                                <input type="radio" id="no" name="multiple-choice" value="no" required>
                             </div>
                         </div>
-                        <button type="submit" id="submit-btn">Add book</button>
-                    </form>
+                    </div>
+                    <button type="submit" id="submit-btn">Add book</button>
                     <div id="cancel-button-container">
                         <button id="cancel-button">Cancel</button>
                     </div>

@@ -66,27 +66,3 @@
 #library *:hover, #add-book-btn:hover {
     cursor: pointer;
 }
-
-button:hover {
-    cursor: pointer;
-}
-
-#submit-btn {
-    background-color: rgba(0, 110, 255, 0.781);
-    color: white;
-    border-radius: var(--btn-border-rad);
-    border: none;
-    padding: 15px;
-}
-
-#cancel-button {
-    background-color: rgba(255, 0, 0, 0.781);
-    color: white;
-    border-radius: var(--btn-border-rad);
-    border: none;
-    padding: 10px;
-}
-
-#cancel-button-container {
-    padding: 10px 10px 15px 10px;
-}
