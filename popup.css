@@ -9,11 +9,26 @@
 }
 
 #popup-window {
-    display: flex;
+    display: grid;
+    grid-template: 10fr 1fr / 1fr;
     height: 500px;
     width: 350px;
-    z-index: 100;
-    margin-top: 150px;
+    /* margin-top: 150px; */
     border-radius: var(--default-radius);
     background-color: white;
+    border: 1px solid;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    padding: 10px 10px 0 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cancel-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

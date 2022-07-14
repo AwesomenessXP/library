@@ -29,7 +29,7 @@ function Book(title, author, pageNum, isRead) { // the constructor
 // }
 
 function renderPopUp () {
-    popupWindow.style.display = 'block';
+    popup.style.display = 'flex';
     popup.style.backgroundColor = 'rgba(0, 0, 0, 0.233)';
     popup.style.zIndex = '100';
 }
@@ -37,7 +37,7 @@ function renderPopUp () {
 // ------------------------------ EVENT LISTENERS -------------------
 
 window.addEventListener('load', () => {
-    // popupWindow.style.display = 'none';
+    popup.style.display = 'none';
 });
 
 addBookBtn.addEventListener('click', () => {
