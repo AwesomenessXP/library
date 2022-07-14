@@ -13,6 +13,7 @@ let myLibrary = [];
 let addBookBtn = document.getElementById("add-book-btn");
 let popupWindow = document.getElementById('popup-window');
 let popup = document.getElementById('popup');
+let cancelBtn = document.getElementById('cancel-button');
 
 
 // ----------------------------- OBJECTS/FUNCTIONS -------------------------
@@ -34,6 +35,10 @@ function renderPopUp () {
     popup.style.zIndex = '100';
 }
 
+function closePopUp () {
+    popup.style.display = 'none';
+}
+
 // ------------------------------ EVENT LISTENERS -------------------
 
 window.addEventListener('load', () => {
@@ -44,6 +49,10 @@ addBookBtn.addEventListener('click', () => {
     //before we add the book, we need to input data
     renderPopUp();
     let newBook = new Book();
+});
+
+cancelBtn.addEventListener('click', () => {
+    closePopUp();
 });
 
 

@@ -66,3 +66,11 @@
 #library *:hover, #add-book-btn:hover {
     cursor: pointer;
 }
+
+#cancel-button {
+    background-color: rgba(255, 0, 0, 0.781);
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+}
