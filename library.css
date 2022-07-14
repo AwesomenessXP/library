@@ -66,24 +66,3 @@
 #library *:hover, #add-book-btn:hover {
     cursor: pointer;
 }
-
-#popup {
-    position: absolute;
-    display: flex;
-    align-items: center;    
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-#popup-window {
-    display: flex;
-    height: 500px;
-    width: 350px;
-    border: 1px solid;
-    z-index: 100;
-    margin-top: 150px;
-    border-radius: var(--default-radius);
-    background-color: white;
-}
