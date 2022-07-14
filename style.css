@@ -1,10 +1,21 @@
+:root {
+    --font-type: sans-serif;
+    --default-radius: 12px;
+}
+
 * {
     margin: 0;
+    font-family: var(--font-type);
+}
+
+/* this is used to keep the height reponsive if theres more content */
+#page-container {
+    position: relative;
+    min-height: 100vh
 }
 
 header {
     display: flex;
-    font-family: sans-serif;
     padding: 10px;
     justify-content: space-around;
     align-items: center;
@@ -19,33 +30,16 @@ header > div {
     border-radius: 8px;
 }
 
-#article-container {
-    display: flex;
+header > h1 {
+    font-size: 50px;
+}
+
+footer {
+    position: absolute;
+    align-items: center;    
     justify-content: center;
-    align-items: center;
-}
-
-#library-container {
+    width: 100%;
+    height: 5rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#library {
-    display: grid;
-    padding: 20px;
-    width: 1000px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-#library * {
-    height: 250px;
-    border-radius: 12px;
-}
-
-#add-book-container {
-    display: flex;
-    height: 150px;
-    width: 1040px;
+    bottom: 0;
 }
