@@ -24,11 +24,20 @@
     gap: 30px;
 }
 
-#library * {
-    display: flex;
+#library > .book {
+    display: grid;
     height: 250px;
     border-radius: 12px;
     border: 1px solid;
+    justify-content: center;
+}
+
+#library > .book > h3 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
 }
 
 #add-book-container {
