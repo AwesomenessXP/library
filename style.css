@@ -19,9 +19,10 @@ header {
     padding: 10px;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 2px solid;
 }
 
-header > div {
+header #login {
     display: flex;
     align-items: center;
     padding: 0px 10px 0px 10px;
@@ -30,8 +31,20 @@ header > div {
     border-radius: 8px;
 }
 
-header > h1 {
-    font-size: 50px;
+header #login:hover {
+    cursor: pointer;
+}
+
+header #logo {
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header #logo > p {
+    font-size: 18px;
 }
 
 footer {

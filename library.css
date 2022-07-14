@@ -50,3 +50,7 @@
     background-color: white;
     font-weight: bold;
 }
+
+#library *:hover, #add-book-btn:hover {
+    cursor: pointer;
+}
