@@ -12,9 +12,8 @@ HELPFUL TIPS:
 let myLibrary = [];
 let inputTitle;
 let inputAuthor;
-let inputPages;
+let inputPages = document.getElementById('pages');
 let inputRead;
-let newBook;
 const addBookBtn = document.getElementById("add-book-btn");
 const popupWindow = document.getElementById('popup-window');
 const popup = document.getElementById('popup');
@@ -24,7 +23,7 @@ const submitBtn = document.getElementById('submit-btn');
 
 // ----------------------------- OBJECTS/FUNCTIONS -------------------------
 
-function Book(title, author, pageNum = 0, isRead) { // the constructor
+function Book(title = ' ', author = ' ', pageNum = 0, isRead = ' ') { // the constructor
     this.title = title;
     this.author = author;
     this.pageNum = pageNum;
@@ -52,6 +51,7 @@ function closePopUp () {
 window.addEventListener('load', () => {
     popup.style.display = 'none';
     popupWindow.style.display = 'none';
+    inputPages.value = 0;
 });
 
 addBookBtn.addEventListener('click', () => {
@@ -75,9 +75,11 @@ submitBtn.addEventListener('click', () => {
             && (inputRead !== '')) {
         console.log(`${inputTitle}, ${inputAuthor}, ${inputPages}, ${inputRead}`);
 
-        document.getElementById('title').value = '';
-        document.getElementById('author').value = '';
-        document.getElementById('pages').value = '';
+        document.getElementById('title').value = ' ';
+        document.getElementById('author').value = ' ';
+        document.getElementById('pages').value = 0;
+        closePopUp();
+        
     }// if
 
     // Reset the variables
