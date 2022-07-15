@@ -33,7 +33,9 @@ function Book(title = '', author = '', pageNum = 0, isRead = '') { // the constr
 
 function addBookToLibrary (args) {
     if (args !== undefined) {
-        console.log(`${args[0].title}, ${args[0].author}, ${args[0].pageNum}, ${args[0].isRead}`);
+        for (let i = 0; i < args.length; i++) {
+            console.log(`${args[i].title}, ${args[i].author}, ${args[i].pageNum}, ${args[i].isRead}`);
+        }
     }
 }
 
