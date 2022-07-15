@@ -32,7 +32,9 @@ function Book(title = '', author = '', pageNum = 0, isRead = '') { // the constr
 }
 
 function addBookToLibrary (args) {
-    console.log(`${args[0].title}, ${args[0].author}, ${args[0].pageNum}, ${args[0].isRead}`);
+    if (args !== undefined) {
+        console.log(`${args[0].title}, ${args[0].author}, ${args[0].pageNum}, ${args[0].isRead}`);
+    }
 }
 
 function renderPopUp () {
