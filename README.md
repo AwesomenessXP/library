@@ -12,5 +12,5 @@
 - Fix:
 - manually added validation in JS to only submit data if
     the text fields are not empty
-# Features I want to add
+# Features I want to add:
 - style the page and add interactive button functionality
