@@ -25,7 +25,7 @@ const submitBtn = document.getElementById('submit-btn');
 
 // ----------------------------- OBJECTS/FUNCTIONS -------------------------
 
-function Book(title = '', author = '', pageNum = 0, isRead = '') { // the constructor
+function Book(title = '', author = '', pageNum = 0, isRead = false) { // the constructor
     this.title = title;
     this.author = author;
     this.pageNum = pageNum;
@@ -60,7 +60,7 @@ function createCardElements (aBook) {
     title.textContent = `${aBook.title}`;
     author.textContent = `${aBook.author}`;
     pageNum.textContent = `${aBook.pageNum}`;
-    isRead.textContent = `${aBook.isInLibrary}`;
+    aBook.isRead ? isRead.textContent = "Read" : isRead.textContent = "Not read";
 
     // append book and its contents to the screen
     library.appendChild(bookCard);
@@ -105,10 +105,10 @@ submitBtn.addEventListener('click', () => {
     inputAuthor = document.getElementById('author').value;
     inputPages = document.getElementById('pages').value;
     document.getElementById('yes').checked ? inputRead = true : inputRead = false;
-    
-    if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== 0)
-            && (inputRead !== undefined)) {
-        // console.log(`${inputTitle}, ${inputAuthor}, ${inputPages}, ${inputRead}`);
+
+    console.log(inputRead);
+
+    if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== 0)) {
         const newBook = new Book(inputTitle, inputAuthor, inputPages, inputRead);
         myLibrary.push(newBook);
         addBookToLibrary(myLibrary);
