@@ -58,6 +58,7 @@ function createCardElements (aBook) {
     // create delete button
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete-book-btn');
+    deleteBtn.textContent = "Delete item"
 
     // display data to cards
     title.textContent = `${aBook.title}`;
@@ -78,6 +79,12 @@ function createCardElements (aBook) {
     bookCard.appendChild(author);
     bookCard.appendChild(pageNum);
     bookCard.appendChild(isRead);
+    bookCard.appendChild(deleteBtn);
+
+    // add event listener for the specific book card
+    deleteBtn.addEventListener('click', () => {
+        library.removeChild(bookCard);
+    });
 }
 
 function renderPopUp () {
