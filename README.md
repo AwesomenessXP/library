@@ -7,9 +7,10 @@
 - dynamically change z-index using JS
 ## Submit button would clear data when clicking
 - Fix (kind of):
-- left `action` and `post` empty in form element
+- left `action` and `post` attributes empty in `<form>` element
 ## Submit button would not validate data when clicked
 - Fix:
+- added `required` attribute to `<form>` element
 - manually added validation in JS to only submit data if
     the text fields are not empty
 # Features I want to add:
