@@ -14,7 +14,8 @@ let inputTitle;
 let inputAuthor;
 let inputPages = document.getElementById('pages');
 let inputRead;
-let newBook;
+let isBookAdded = false;
+let booksInLibrary = 0;
 const addBookBtn = document.getElementById("add-book-btn");
 const popupWindow = document.getElementById('popup-window');
 const popup = document.getElementById('popup');
@@ -31,12 +32,42 @@ function Book(title = '', author = '', pageNum = 0, isRead = '') { // the constr
     this.isRead = isRead;
 }
 
-function addBookToLibrary (args) {
-    if (args !== undefined) {
-        for (let i = 0; i < args.length; i++) {
-            console.log(`${args[i].title}, ${args[i].author}, ${args[i].pageNum}, ${args[i].isRead}`);
-        }
-    }
+function addBookToLibrary (libraryArray) {
+    if (libraryArray !== undefined) {
+        // for (let i = 0; i < libraryArray.length; i++) {        }// for
+            createCardElements(libraryArray[booksInLibrary]);
+            booksInLibrary++;
+    }// if
+}
+
+function createCardElements (aBook) {
+    // create library container
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('book');
+    
+    // create book items
+    let title = document.createElement('h3');
+    let author = document.createElement('h3');
+    let pageNum = document.createElement('h3');
+    let isRead = document.createElement('h3');
+
+    title.classList.add('title');
+    author.classList.add('author');
+    pageNum.classList.add('pages');
+    isRead.classList.add('read');
+
+    // display data to cards
+    title.textContent = `${aBook.title}`;
+    author.textContent = `${aBook.author}`;
+    pageNum.textContent = `${aBook.pageNum}`;
+    isRead.textContent = `${aBook.isInLibrary}`;
+
+    // append book and its contents to the screen
+    library.appendChild(bookCard);
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pageNum);
+    bookCard.appendChild(isRead);
 }
 
 function renderPopUp () {
@@ -74,10 +105,9 @@ submitBtn.addEventListener('click', () => {
     inputAuthor = document.getElementById('author').value;
     inputPages = document.getElementById('pages').value;
     document.getElementById('yes').checked ? inputRead = true : inputRead = false;
-
-
+    
     if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== 0)
-            && (inputRead !== '')) {
+            && (inputRead !== undefined)) {
         // console.log(`${inputTitle}, ${inputAuthor}, ${inputPages}, ${inputRead}`);
         const newBook = new Book(inputTitle, inputAuthor, inputPages, inputRead);
         myLibrary.push(newBook);
