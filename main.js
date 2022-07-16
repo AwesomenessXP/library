@@ -126,13 +126,13 @@ cancelBtn.addEventListener('click', () => {
 });
 
 submitBtn.addEventListener('click', () => {
+    // grab the data that the user entered in text fields
     inputTitle = document.getElementById('title').value;
     inputAuthor = document.getElementById('author').value;
     inputPages = document.getElementById('pages').value;
     document.getElementById('yes').checked ? inputRead = true : inputRead = false;
 
-    console.log(inputRead);
-
+    // validate data
     if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== '')) {
         const newBook = new Book(inputTitle, inputAuthor, inputPages, inputRead);
         myLibrary.push(newBook);
