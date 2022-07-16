@@ -25,7 +25,7 @@ const submitBtn = document.getElementById('submit-btn');
 
 // ----------------------------- OBJECTS/FUNCTIONS -------------------------
 
-function Book(title = '', author = '', pageNum = 0, isRead = false) { // the constructor
+function Book(title = '', author = '', pageNum = '', isRead = false) { // the constructor
     this.title = title;
     this.author = author;
     this.pageNum = pageNum;
@@ -34,9 +34,8 @@ function Book(title = '', author = '', pageNum = 0, isRead = false) { // the con
 
 function addBookToLibrary (libraryArray) {
     if (libraryArray !== undefined) {
-        // for (let i = 0; i < libraryArray.length; i++) {        }// for
-            createCardElements(libraryArray[booksInLibrary]);
-            booksInLibrary++;
+        createCardElements(libraryArray[booksInLibrary]);
+        booksInLibrary++;// increment our counter
     }// if
 }
 
@@ -56,11 +55,22 @@ function createCardElements (aBook) {
     pageNum.classList.add('pages');
     isRead.classList.add('read');
 
+    // create delete button
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-book-btn');
+
     // display data to cards
     title.textContent = `${aBook.title}`;
     author.textContent = `${aBook.author}`;
     pageNum.textContent = `${aBook.pageNum}`;
-    aBook.isRead ? isRead.textContent = "Read" : isRead.textContent = "Not read";
+    if (aBook.isRead) {
+        isRead.textContent = "Read";
+        isRead.style.backgroundColor = 'rgb(0, 194, 0)';
+    }// if
+    else {
+        isRead.textContent = "Not read";
+        isRead.style.backgroundColor = 'rgba(0, 110, 255, 0.781)';
+    }// else
 
     // append book and its contents to the screen
     library.appendChild(bookCard);
@@ -71,6 +81,7 @@ function createCardElements (aBook) {
 }
 
 function renderPopUp () {
+    // make popup visible
     popupWindow.style.display = 'grid';
     popup.style.display = 'flex';
     popup.style.backgroundColor = 'rgba(0, 0, 0, 0.233)';
@@ -78,8 +89,16 @@ function renderPopUp () {
 }
 
 function closePopUp () {
+    // hide popup window
     popup.style.display = 'none';
     popupWindow.style.display = 'none';
+
+    // delete any text typed in by user
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
+    document.getElementById('yes').value = '';
+    document.getElementById('no').value = '';
 }
 
 // ------------------------------ EVENT LISTENERS -------------------
@@ -87,7 +106,6 @@ function closePopUp () {
 window.addEventListener('load', () => {
     popup.style.display = 'none';
     popupWindow.style.display = 'none';
-    inputPages.value = 0;
 });
 
 addBookBtn.addEventListener('click', () => {
@@ -108,21 +126,10 @@ submitBtn.addEventListener('click', () => {
 
     console.log(inputRead);
 
-    if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== 0)) {
+    if ((inputTitle !== '') && (inputAuthor !== '') && (inputPages !== '')) {
         const newBook = new Book(inputTitle, inputAuthor, inputPages, inputRead);
         myLibrary.push(newBook);
         addBookToLibrary(myLibrary);
-        document.getElementById('title').value = '';
-        document.getElementById('author').value = '';
-        document.getElementById('pages').value = 0;
-        document.getElementById('yes').value = '';
-        document.getElementById('no').value = '';
         closePopUp();
     }// if
-
-    // Reset the variables
-    inputTitle = '';
-    inputAuthor = '';
-    inputPages = 0;
-    inputRead = '';
 });
