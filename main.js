@@ -61,15 +61,15 @@ function createCardElements (aBook) {
     deleteBtn.textContent = "Delete item"
 
     // display data to cards
-    title.textContent = `${aBook.title}`;
-    author.textContent = `${aBook.author}`;
-    pageNum.textContent = `${aBook.pageNum}`;
+    title.textContent = `Title: ${aBook.title}`;
+    author.textContent = `Author: ${aBook.author}`;
+    pageNum.textContent = `Pages read: ${aBook.pageNum}`;
     if (aBook.isRead) {
-        isRead.textContent = "Read";
+        isRead.textContent = "Finished";
         isRead.style.backgroundColor = 'rgb(0, 194, 0)';
     }// if
     else {
-        isRead.textContent = "Not read";
+        isRead.textContent = "Not finished";
         isRead.style.backgroundColor = 'rgba(0, 110, 255, 0.781)';
     }// else
 
